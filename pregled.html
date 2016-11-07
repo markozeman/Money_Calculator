@@ -10,19 +10,61 @@
     
     <body>
         <div class="header">
-            <img src="images/logo.jpg" class="logo">
+            <a href="index.html"> <img src="images/logo.jpg" class="logo"> </a>
             <h1 class="title"> Kalkulator stroškov </h1>
             <p class="slogan"> Be smart, save money </p>
         </div>
         
         <div class="navigation">
-            <button type="button" id="nov_vnos"> Nov vnos </button>
-            <button type="button" id="pregled"> Pregled </button>
-            <button type="button" id="vizualizacija"> Vizualizacija </button>
+            <a href="vnos.html"> <button type="button" id="nov_vnos"> Nov vnos </button> </a>
+            <a href="pregled.html"> <button type="button" id="pregled"> Pregled </button> </a>
+            <a href="vizualizacija.html"> <button type="button" id="vizualizacija"> Vizualizacija </button> </a>
         </div>
 
         <div class="main">
+            <div class="dropdown">
+                <select>
+                    <option value="wallet"> Denarnica </option>
+                    <option value="bank"> Banka </option>
+                </select>
+            </div>
             
+            <div class="choose_option">
+                <select>
+                    <option value="hrana"> Hrana </option>
+                    <option value="oblacila"> Oblačila, obutev </option>
+                    <option value="tehnika"> Tehnika </option>
+                    <option value="popravila"> Popravila </option>
+                    <option value="gospodinjstvo"> Gospodinjstvo </option>
+                    <option value="prevoz"> Prevoz </option>
+                    <option value="pocitnice"> Počitnice, potovanja </option>
+                    <option value="darila"> Darila </option>
+                    <option value="drugo"> Drugo </option>
+                    
+                    <option value="placa"> Plača </option>
+                    <option value="ostali_prihodki"> Ostali prihodki </option>
+                    
+                    <option value="dvig"> Dvig gotovine </option>
+                    <option value="polog"> Polog gotovine </option>
+                </select>
+            </div>
+            
+            <div class="choose_period">
+                <select>
+                    <option value="teden"> Zadnji teden </option>
+                    <option value="mesec"> Zadnji mesec </option>
+                    <option value="leto"> Zadnje leto </option>
+                </select>
+            </div>
+            
+            <div class="confirm">
+                 <button type="button"> Preglej </button>
+            </div>
+            
+            <div class="result_set">
+                <!-- izdelek, vrednost, datum -->
+                <!-- za banko --- polog ali dvig, vrednost, datum -->
+            </div>
         </div>
         
         <div class="footer">
