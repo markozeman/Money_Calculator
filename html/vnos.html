@@ -2,6 +2,7 @@
 <html>
     <head>
         <title> Kalkulator stroškov </title>
+        <meta charset="UTF-8">
         
         <link rel="stylesheet" type="text/css" href="../css/style.css">
         
@@ -9,19 +10,20 @@
     </head>
     
     <body>
-        <div class="header">
+        <header class="header">
             <a href="index.html"> <img src="../images/logo.jpg" class="logo"> </a>
             <h1 class="title"> Kalkulator stroškov </h1>
             <p class="slogan"> Be smart, save money </p>
-        </div>
+            <button class="login"> Registracija </button>
+        </header>
         
-        <div class="navigation">
+        <nav class="navigation">
             <a href="vnos.html"> <button type="button" id="nov_vnos"> Nov vnos </button> </a>
             <a href="pregled.html"> <button type="button" id="pregled"> Pregled </button> </a>
             <a href="vizualizacija.html"> <button type="button" id="vizualizacija"> Vizualizacija </button> </a>
-        </div>
+        </nav>
 
-        <div class="main">
+        <section class="main">
             <div class="dropdown">
                 <select onchange="showGoal(this)">
                     <option value="wallet"> Denarnica </option>
@@ -34,7 +36,7 @@
                 <div class="input">
                     <form method="post" onsubmit="return add_or_take_money()">
                         Opis: <input type="text" name="opis" placeholder="Vnesite opis..."><br>
-                        Znesek: <input type="text" name="znesek" placeholder="Vnesite znesek..."> € <br>
+                        Znesek v €: <input type="text" name="znesek" placeholder="Vnesite znesek..."> <br>
                         <select>
                             <option value="hrana"> Hrana </option>
                             <option value="oblacila"> Oblačila, obutev </option>
@@ -52,15 +54,15 @@
                             <option value="dvig"> Dvig gotovine </option>
                             <option value="polog"> Polog gotovine </option>
                         </select>
-                        <input type="submit" name="action" value="+">
-                        <input type="submit" name="action" value="-">
+                        <input type="submit" name="plus" value="+">
+                        <input type="submit" name="minus" value="-">
                     </form>
                 </div>
                 
                 <div class="input">
                     <form method="post" onsubmit="return add_or_take_money()">
                         Opis: <input type="text" name="opis" placeholder="Vnesite opis..."><br>
-                        Znesek: <input type="text" name="znesek" placeholder="Vnesite znesek..."> € <br>
+                        Znesek v €: <input type="text" name="znesek" placeholder="Vnesite znesek..."> <br>
                         <select>
                             <option value="hrana"> Hrana </option>
                             <option value="oblacila"> Oblačila, obutev </option>
@@ -78,15 +80,15 @@
                             <option value="dvig"> Dvig gotovine </option>
                             <option value="polog"> Polog gotovine </option>
                         </select>
-                        <input type="submit" name="action" value="+">
-                        <input type="submit" name="action" value="-">
+                        <input type="submit" name="plus" value="+">
+                        <input type="submit" name="minus" value="-">
                     </form>
                 </div>
                 
                 <div class="input">
                     <form method="post" onsubmit="return add_or_take_money()">
                         Opis: <input type="text" name="opis" placeholder="Vnesite opis..."><br>
-                        Znesek: <input type="text" name="znesek" placeholder="Vnesite znesek..."> € <br>
+                        Znesek v €: <input type="text" name="znesek" placeholder="Vnesite znesek..."> <br>
                         <select>
                             <option value="hrana"> Hrana </option>
                             <option value="oblacila"> Oblačila, obutev </option>
@@ -104,24 +106,24 @@
                             <option value="dvig"> Dvig gotovine </option>
                             <option value="polog"> Polog gotovine </option>
                         </select>
-                        <input type="submit" name="action" value="+">
-                        <input type="submit" name="action" value="-">
+                        <input type="submit" name="plus" value="+">
+                        <input type="submit" name="minus" value="-">
                     </form>
                 </div>
             </div>
             
             <div class="new_goals" style="display: none;">
                 <form method="post" onsubmit="return add_goal()">
-                    <input type="text" name="opis_privarcevanja" placeholder="Vnesite za kaj želite privarčevati..."><br>
-                    <input type="text" name="vrednost" placeholder="Vnesite vrednost..."> € <br>
-                    <input type="text" name="datum" placeholder="Vnesite končni datum varčavanja v obliki DD.MM.LLLL"> <br>
+                    Varčujem za: <input type="text" name="opis_privarcevanja" placeholder="Vnesite za kaj želite privarčevati..."><br>
+                    Vrednost v €: <input type="text" name="vrednost" placeholder="Vnesite vrednost..."> <br>
+                    Privarčeval bom do: <input type="text" name="datum" placeholder="Vnesite končni datum varčevanja v obliki DD.MM.LLLL"> <br>
                     <input type="submit" value="Dodaj cilj">
                 </form>
             </div>
             
             <div class="add_to_goal" style="display: none;">
                 <form method="post" onsubmit="return add_to_goal()">
-                    <input type="text" name="vrednost" placeholder="Vnesite vrednost..."> € <br>
+                    Vrednost v €: <input type="text" name="vrednost" placeholder="Vnesite vrednost..."> <br>
                     
                     <select>
                         <option value="wallet"> Vzemi iz denarnice </option>
@@ -131,15 +133,15 @@
                     <input type="submit" value="+">
                 </form>
             </div>
-        </div>
+        </section>
         
-        <div class="footer">
+        <footer class="footer">
             <p id="author">
                 &copy Avtor: Marko Zeman
             </p>
             <p>
                 http://www.clipartkid.com/images/332/save-money-images-clipart-panda-free-clipart-images-eIVV8v-clipart.jpg
             </p>
-        </div>
+        </footer>
     </body>
 </html>

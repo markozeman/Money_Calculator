@@ -2,6 +2,7 @@
 <html>
     <head>
         <title> Kalkulator stroškov </title>
+        <meta charset="UTF-8">
         
         <link rel="stylesheet" type="text/css" href="../css/style.css">
         
@@ -9,19 +10,20 @@
     </head>
     
     <body>
-        <div class="header">
+        <header class="header">
             <a href="index.html"> <img src="../images/logo.jpg" class="logo"> </a>
             <h1 class="title"> Kalkulator stroškov </h1>
             <p class="slogan"> Be smart, save money </p>
-        </div>
+            <button class="login"> Registracija </button>
+        </header>
         
-        <div class="navigation">
+        <nav class="navigation">
             <a href="vnos.html"> <button type="button" id="nov_vnos"> Nov vnos </button> </a>
             <a href="pregled.html"> <button type="button" id="pregled"> Pregled </button> </a>
             <a href="vizualizacija.html"> <button type="button" id="vizualizacija"> Vizualizacija </button> </a>
-        </div>
+        </nav>
 
-        <div class="main">
+        <section class="main">
             <div class="dropdown">
                 <select onchange="showGoal_2(this)">
                     <option value="wallet"> Denarnica </option>
@@ -73,15 +75,15 @@
                 <!-- prikaže vse cilje in njihovo stanje (mogoče progress bar) -->
                 <p> Testing... </p>
             </div>
-        </div>
+        </section>
         
-        <div class="footer">
+        <footer class="footer">
             <p id="author">
                 &copy Avtor: Marko Zeman
             </p>
             <p>
                 http://www.clipartkid.com/images/332/save-money-images-clipart-panda-free-clipart-images-eIVV8v-clipart.jpg
             </p>
-        </div>
+        </footer>
     </body>
 </html>
