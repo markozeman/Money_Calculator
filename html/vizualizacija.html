@@ -3,27 +3,42 @@
     <head>
         <title> Kalkulator stroškov </title>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
         
         <script src="../js/script.js"></script>
     </head>
     
     <body>
-        <header class="header">
-            <a href="index.html"> <img src="../images/logo.jpg" class="logo"> </a>
-            <h1 class="title"> Kalkulator stroškov </h1>
-            <p class="slogan"> Be smart, save money </p>
-            <button class="login"> Registracija </button>
+       <header class="header col-12">
+            <div class="col-1">
+                <a href="index.html"> <img src="../images/logo.jpg" class="logo"> </a>
+            </div>
+            <div class="title col-5">
+                <h1> Kalkulator stroškov </h1>
+            </div>  
+            <div class="slogan col-4">
+                <h3> Be smart, save money </h3>
+            </div>
+            <div class="login col-2">
+                <button class="registration"> Registracija </button>
+            </div>
         </header>
         
-        <nav class="navigation">
-            <a href="vnos.html"> <button type="button" id="nov_vnos"> Nov vnos </button> </a>
-            <a href="pregled.html"> <button type="button" id="pregled"> Pregled </button> </a>
-            <a href="vizualizacija.html"> <button type="button" id="vizualizacija"> Vizualizacija </button> </a>
+        <nav class="navigation col-12">
+            <div class="nav_buttons col-4">
+                <a href="vnos.html"> <button type="button" id="nov_vnos"> Nov vnos </button> </a>
+            </div>
+            <div class="nav_buttons col-4">
+                <a href="pregled.html"> <button type="button" id="pregled"> Pregled </button> </a>
+            </div>
+            <div class="nav_buttons col-4">
+                <a href="vizualizacija.html"> <button type="button" id="vizualizacija"> Vizualizacija </button> </a>
+            </div>
         </nav>
 
-        <section class="main">
+        <section class="main col-12">
             <div class="dropdown">
                 <select>
                     <option value="wallet"> Denarnica </option>
@@ -78,13 +93,14 @@
             </canvas>
         </section>
         
-        <footer class="footer">
+        <footer class="footer col-12">
             <p id="author">
                 &copy Avtor: Marko Zeman
             </p>
-            <p>
-                http://www.clipartkid.com/images/332/save-money-images-clipart-panda-free-clipart-images-eIVV8v-clipart.jpg
-            </p>
+            <p> Uporabljeni viri za slike: </p>
+            <ul>
+                <li> http://www.clipartkid.com/images/332/save-money-images-clipart-panda-free-clipart-images-eIVV8v-clipart.jpg </li>
+            </ul>
         </footer>
     </body>
 </html>
