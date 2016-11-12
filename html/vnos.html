@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
         
         <script src="../js/script.js"></script>
     </head>
@@ -22,7 +22,7 @@
                 <h3> Be smart, save money </h3>
             </div>
             <div class="login col-2">
-                <button class="registration"> Registracija </button>
+                <a href="registracija.html"> <button type="button" class="registration"> Registracija </button> </a>
             </div>
         </header>
         
@@ -47,106 +47,159 @@
                     <option value="goal_add_money"> Privarčuj za cilj </option>
                 </select>
             </div>
+            
             <div class="add_data">
-                <div class="input">
+                <div class="input col-12">
                     <form method="post" onsubmit="return add_or_take_money()">
-                        Opis: <input type="text" name="opis" placeholder="Vnesite opis..."><br>
-                        Znesek v €: <input type="text" name="znesek" placeholder="Vnesite znesek..."> <br>
-                        <select>
-                            <option value="hrana"> Hrana </option>
-                            <option value="oblacila"> Oblačila, obutev </option>
-                            <option value="tehnika"> Tehnika </option>
-                            <option value="popravila"> Popravila </option>
-                            <option value="gospodinjstvo"> Gospodinjstvo </option>
-                            <option value="prevoz"> Prevoz </option>
-                            <option value="pocitnice"> Počitnice, potovanja </option>
-                            <option value="darila"> Darila </option>
-                            <option value="drugo"> Drugo </option>
-                            
-                            <option value="placa"> Plača </option>
-                            <option value="ostali_prihodki"> Ostali prihodki </option>
-                            
-                            <option value="dvig"> Dvig gotovine </option>
-                            <option value="polog"> Polog gotovine </option>
-                        </select>
-                        <input type="submit" name="plus" value="+">
-                        <input type="submit" name="minus" value="-">
+                        <div class="col-3">
+                            Opis: <input type="text" name="opis" placeholder="Vnesite opis...">
+                        </div>
+                        <div class="col-3">
+                            Znesek v €: <input type="text" name="znesek" placeholder="Vnesite znesek...">
+                        </div>
+                        <div class="col-3">
+                            <select>
+                                <option value="hrana"> Hrana </option>
+                                <option value="oblacila"> Oblačila, obutev </option>
+                                <option value="tehnika"> Tehnika </option>
+                                <option value="popravila"> Popravila </option>
+                                <option value="gospodinjstvo"> Gospodinjstvo </option>
+                                <option value="prevoz"> Prevoz </option>
+                                <option value="pocitnice"> Počitnice, potovanja </option>
+                                <option value="darila"> Darila </option>
+                                <option value="drugo"> Drugo </option>
+                                
+                                <option value="placa"> Plača </option>
+                                <option value="ostali_prihodki"> Ostali prihodki </option>
+                                
+                                <option value="dvig"> Dvig gotovine </option>
+                                <option value="polog"> Polog gotovine </option>
+                            </select>
+                        </div>
+                        <div class="col-1">
+                            <input type="submit" name="plus" value="+">
+                        </div>    
+                        <div class="col-1">
+                            <input type="submit" name="minus" value="-" class="minus_button">
+                        </div>
                     </form>
                 </div>
                 
-                <div class="input">
+                <div class="input col-12">
                     <form method="post" onsubmit="return add_or_take_money()">
-                        Opis: <input type="text" name="opis" placeholder="Vnesite opis..."><br>
-                        Znesek v €: <input type="text" name="znesek" placeholder="Vnesite znesek..."> <br>
-                        <select>
-                            <option value="hrana"> Hrana </option>
-                            <option value="oblacila"> Oblačila, obutev </option>
-                            <option value="tehnika"> Tehnika </option>
-                            <option value="popravila"> Popravila </option>
-                            <option value="gospodinjstvo"> Gospodinjstvo </option>
-                            <option value="prevoz"> Prevoz </option>
-                            <option value="pocitnice"> Počitnice, potovanja </option>
-                            <option value="darila"> Darila </option>
-                            <option value="drugo"> Drugo </option>
-                            
-                            <option value="placa"> Plača </option>
-                            <option value="ostali_prihodki"> Ostali prihodki </option>
-                            
-                            <option value="dvig"> Dvig gotovine </option>
-                            <option value="polog"> Polog gotovine </option>
-                        </select>
-                        <input type="submit" name="plus" value="+">
-                        <input type="submit" name="minus" value="-">
+                        <div class="col-3">
+                            Opis: <input type="text" name="opis" placeholder="Vnesite opis...">
+                        </div>
+                        <div class="col-3">
+                            Znesek v €: <input type="text" name="znesek" placeholder="Vnesite znesek...">
+                        </div>
+                        <div class="col-3">
+                            <select>
+                                <option value="hrana"> Hrana </option>
+                                <option value="oblacila"> Oblačila, obutev </option>
+                                <option value="tehnika"> Tehnika </option>
+                                <option value="popravila"> Popravila </option>
+                                <option value="gospodinjstvo"> Gospodinjstvo </option>
+                                <option value="prevoz"> Prevoz </option>
+                                <option value="pocitnice"> Počitnice, potovanja </option>
+                                <option value="darila"> Darila </option>
+                                <option value="drugo"> Drugo </option>
+                                
+                                <option value="placa"> Plača </option>
+                                <option value="ostali_prihodki"> Ostali prihodki </option>
+                                
+                                <option value="dvig"> Dvig gotovine </option>
+                                <option value="polog"> Polog gotovine </option>
+                            </select>
+                        </div>
+                        <div class="col-1">
+                            <input type="submit" name="plus" value="+">
+                        </div>    
+                        <div class="col-1">
+                            <input type="submit" name="minus" value="-" class="minus_button">
+                        </div>
                     </form>
                 </div>
                 
-                <div class="input">
+                <div class="input col-12">
                     <form method="post" onsubmit="return add_or_take_money()">
-                        Opis: <input type="text" name="opis" placeholder="Vnesite opis..."><br>
-                        Znesek v €: <input type="text" name="znesek" placeholder="Vnesite znesek..."> <br>
-                        <select>
-                            <option value="hrana"> Hrana </option>
-                            <option value="oblacila"> Oblačila, obutev </option>
-                            <option value="tehnika"> Tehnika </option>
-                            <option value="popravila"> Popravila </option>
-                            <option value="gospodinjstvo"> Gospodinjstvo </option>
-                            <option value="prevoz"> Prevoz </option>
-                            <option value="pocitnice"> Počitnice, potovanja </option>
-                            <option value="darila"> Darila </option>
-                            <option value="drugo"> Drugo </option>
-                            
-                            <option value="placa"> Plača </option>
-                            <option value="ostali_prihodki"> Ostali prihodki </option>
-                            
-                            <option value="dvig"> Dvig gotovine </option>
-                            <option value="polog"> Polog gotovine </option>
-                        </select>
-                        <input type="submit" name="plus" value="+">
-                        <input type="submit" name="minus" value="-">
+                        <div class="col-3">
+                            Opis: <input type="text" name="opis" placeholder="Vnesite opis...">
+                        </div>
+                        <div class="col-3">
+                            Znesek v €: <input type="text" name="znesek" placeholder="Vnesite znesek...">
+                        </div>
+                        <div class="col-3">
+                            <select>
+                                <option value="hrana"> Hrana </option>
+                                <option value="oblacila"> Oblačila, obutev </option>
+                                <option value="tehnika"> Tehnika </option>
+                                <option value="popravila"> Popravila </option>
+                                <option value="gospodinjstvo"> Gospodinjstvo </option>
+                                <option value="prevoz"> Prevoz </option>
+                                <option value="pocitnice"> Počitnice, potovanja </option>
+                                <option value="darila"> Darila </option>
+                                <option value="drugo"> Drugo </option>
+                                
+                                <option value="placa"> Plača </option>
+                                <option value="ostali_prihodki"> Ostali prihodki </option>
+                                
+                                <option value="dvig"> Dvig gotovine </option>
+                                <option value="polog"> Polog gotovine </option>
+                            </select>
+                        </div>
+                        <div class="col-1">
+                            <input type="submit" name="plus" value="+">
+                        </div>    
+                        <div class="col-1">
+                            <input type="submit" name="minus" value="-" class="minus_button">
+                        </div>
                     </form>
                 </div>
             </div>
             
             <div class="new_goals" style="display: none;">
-                <form method="post" onsubmit="return add_goal()">
-                    Varčujem za: <input type="text" name="opis_privarcevanja" placeholder="Vnesite za kaj želite privarčevati..."><br>
-                    Vrednost v €: <input type="text" name="vrednost" placeholder="Vnesite vrednost..."> <br>
-                    Privarčeval bom do: <input type="text" name="datum" placeholder="Vnesite končni datum varčevanja v obliki DD.MM.LLLL"> <br>
-                    <input type="submit" value="Dodaj cilj">
-                </form>
+                <div class="col-12">
+                    <form method="post" onsubmit="return add_goal()">
+                        <div class="col-3">
+                            Varčujem za: <input type="text" name="opis_privarcevanja" placeholder="Vnesite cilj varčevanja..."><br>
+                        </div>
+                        <div class="col-3">
+                            Vrednost v €: <input type="text" name="vrednost" placeholder="Vnesite vrednost..."> <br>
+                        </div>
+                        <div class="col-4">
+                            Privarčeval bom do: <input type="text" name="datum" placeholder="DD.MM.LLLL"> <br>
+                        </div>
+                        <div class="col-2">
+                            <input type="submit" value="+">
+                        </div>
+                    </form>
+                </div>
             </div>
             
             <div class="add_to_goal" style="display: none;">
-                <form method="post" onsubmit="return add_to_goal()">
-                    Vrednost v €: <input type="text" name="vrednost" placeholder="Vnesite vrednost..."> <br>
-                    
-                    <select>
-                        <option value="wallet"> Vzemi iz denarnice </option>
-                        <option value="bank"> Vzemi iz banke </option>
-                    </select>
-                    
-                    <input type="submit" value="+">
-                </form>
+                <div class="col-12">
+                    <form method="post" onsubmit="return add_to_goal()">
+                        <div class="col-4">
+                            Vrednost v €: <input type="text" name="vrednost" placeholder="Vnesite vrednost..."> <br>
+                        </div>
+                        <div class="col-3">
+                            <select>
+                                <option value="wallet"> Vzemi iz denarnice </option>
+                                <option value="bank"> Vzemi iz banke </option>
+                            </select>
+                        </div>
+                        <div class="col-3">
+                            <select>
+                                <option value="cilj1"> Cilj 1 </option>
+                                <option value="cilj2"> Cilj 2 </option>
+                            </select>
+                        </div>
+                        <div class="col-2">
+                            <input type="submit" value="+">
+                        </div>
+                    </form>
+                </div>
             </div>
         </section>
         
@@ -154,10 +207,13 @@
             <p id="author">
                 &copy Avtor: Marko Zeman
             </p>
-            <p> Uporabljeni viri za slike: </p>
-            <ul>
-                <li> http://www.clipartkid.com/images/332/save-money-images-clipart-panda-free-clipart-images-eIVV8v-clipart.jpg </li>
-            </ul>
+            <div class="sources">
+                <p> Uporabljeni viri za slike: </p>
+                <ul>
+                    <li> http://www.clipartkid.com/images/332/save-money-images-clipart-panda-free-clipart-images-eIVV8v-clipart.jpg </li>
+                    <li> http://subtlepatterns.com/ </li>
+                </ul>
+            </div>
         </footer>
     </body>
 </html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Kalkulator stroškov </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        
+        <script src="../js/script.js"></script>
+    </head>
+    
+    <body>
+        <header class="header col-12">
+            <div class="col-1">
+                <img src="../images/logo.jpg" class="logo">
+            </div>
+            <div class="title col-5">
+                <h1> Kalkulator stroškov </h1>
+            </div>  
+            <div class="slogan col-4">
+                <h3> Be smart, save money </h3>
+            </div>
+            <div class="login col-2">
+                <a href="registracija.html"> <button type="button" class="registration"> Registracija </button> </a>
+            </div>
+        </header>
+
+        <section class="main col-12">
+            <form method="post" onsubmit="return registration()" id="registration_form">
+                <div class="username">
+                    <h1> Uporabniško ime: </h1> 
+                    <input type="text" name="up_ime" placeholder="Vnesite upor. ime...">    
+                </div>
+                
+                <div class="password">
+                    <h1> Geslo: </h1> 
+                    <input type="text" name="geslo" placeholder="Vnesite geslo...">    
+                </div>
+                
+                <div class="password">
+                    <h1> Potrditev gesla: </h1> 
+                    <input type="text" name="geslo_2" placeholder="Vnesite geslo...">    
+                </div>
+                
+                <div class="captcha">
+                    <input type="checkbox" name="captcha"> Nisem robot.
+                </div>
+                
+                <div class="register">
+                    <input type="submit" name="sign_in" value="Vpis">  
+                </div>   
+                <div class="register">
+                    <input type="submit" name="register" value="Registracija"> 
+                </div>
+            </form>
+        </section>
+        
+        <footer class="footer col-12">
+            <p id="author">
+                &copy Avtor: Marko Zeman
+            </p>
+            <div class="sources">
+                <p> Uporabljeni viri za slike: </p>
+                <ul>
+                    <li> http://www.clipartkid.com/images/332/save-money-images-clipart-panda-free-clipart-images-eIVV8v-clipart.jpg </li>
+                    <li> http://subtlepatterns.com/ </li>
+                </ul>
+            </div>
+        </footer>
+    </body>
+</html>

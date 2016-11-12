@@ -5,6 +5,36 @@ function main() {
 }
 
 
+
+
+
+
+function registration() {
+    // check if already registered
+    
+    return false;
+}
+
+
+function get_visual_minus() {
+    
+    return false;
+}
+
+
+function get_visual_plus() {
+    
+    return false;
+}
+
+
+function get_data() {
+
+    
+    return false;
+}
+
+
 function add_or_take_money() {
     // check which submit clicked
 
@@ -49,9 +79,11 @@ function showGoal_2(elem){
     if(elem.value == "goals") {
         document.getElementsByClassName("goal_results")[0].style.display = "block";
         document.getElementsByClassName("not_goal_results")[0].style.display = "none";
+        document.getElementsByClassName("result_set")[0].style.display = "none";
     }
     else {
-        document.getElementsByClassName("goal_results")[0].style.display = "none";
         document.getElementsByClassName("not_goal_results")[0].style.display = "block";
+        document.getElementsByClassName("result_set")[0].style.display = "block";
+        document.getElementsByClassName("goal_results")[0].style.display = "none";
     }
 }
