@@ -40,12 +40,12 @@
 
         <section class="main col-12">
             <div class="dropdown">
-                <select onchange="showGoal(this)">
+                <select class="select_dropdown" onchange="showGoal(this)">
                     <option value="wallet"> Denarnica </option>
                     <option value="bank"> Banka </option>
                     <option value="new_goal"> Nov cilj </option>
                     <option value="goal_add_money"> Privarčuj za cilj </option>
-                </select>
+                </select> 
             </div>
             
             <div class="add_data">
@@ -77,82 +77,10 @@
                             </select>
                         </div>
                         <div class="col-1">
-                            <input type="submit" name="plus" value="+">
+                            <input type="submit" name="plus" value="Dodaj">
                         </div>    
                         <div class="col-1">
-                            <input type="submit" name="minus" value="-" class="minus_button">
-                        </div>
-                    </form>
-                </div>
-                
-                <div class="input col-12">
-                    <form method="post" onsubmit="return add_or_take_money()">
-                        <div class="col-3">
-                            Opis: <input type="text" name="opis" placeholder="Vnesite opis...">
-                        </div>
-                        <div class="col-3">
-                            Znesek v €: <input type="text" name="znesek" placeholder="Vnesite znesek...">
-                        </div>
-                        <div class="col-3">
-                            <select>
-                                <option value="hrana"> Hrana </option>
-                                <option value="oblacila"> Oblačila, obutev </option>
-                                <option value="tehnika"> Tehnika </option>
-                                <option value="popravila"> Popravila </option>
-                                <option value="gospodinjstvo"> Gospodinjstvo </option>
-                                <option value="prevoz"> Prevoz </option>
-                                <option value="pocitnice"> Počitnice, potovanja </option>
-                                <option value="darila"> Darila </option>
-                                <option value="drugo"> Drugo </option>
-                                
-                                <option value="placa"> Plača </option>
-                                <option value="ostali_prihodki"> Ostali prihodki </option>
-                                
-                                <option value="dvig"> Dvig gotovine </option>
-                                <option value="polog"> Polog gotovine </option>
-                            </select>
-                        </div>
-                        <div class="col-1">
-                            <input type="submit" name="plus" value="+">
-                        </div>    
-                        <div class="col-1">
-                            <input type="submit" name="minus" value="-" class="minus_button">
-                        </div>
-                    </form>
-                </div>
-                
-                <div class="input col-12">
-                    <form method="post" onsubmit="return add_or_take_money()">
-                        <div class="col-3">
-                            Opis: <input type="text" name="opis" placeholder="Vnesite opis...">
-                        </div>
-                        <div class="col-3">
-                            Znesek v €: <input type="text" name="znesek" placeholder="Vnesite znesek...">
-                        </div>
-                        <div class="col-3">
-                            <select>
-                                <option value="hrana"> Hrana </option>
-                                <option value="oblacila"> Oblačila, obutev </option>
-                                <option value="tehnika"> Tehnika </option>
-                                <option value="popravila"> Popravila </option>
-                                <option value="gospodinjstvo"> Gospodinjstvo </option>
-                                <option value="prevoz"> Prevoz </option>
-                                <option value="pocitnice"> Počitnice, potovanja </option>
-                                <option value="darila"> Darila </option>
-                                <option value="drugo"> Drugo </option>
-                                
-                                <option value="placa"> Plača </option>
-                                <option value="ostali_prihodki"> Ostali prihodki </option>
-                                
-                                <option value="dvig"> Dvig gotovine </option>
-                                <option value="polog"> Polog gotovine </option>
-                            </select>
-                        </div>
-                        <div class="col-1">
-                            <input type="submit" name="plus" value="+">
-                        </div>    
-                        <div class="col-1">
-                            <input type="submit" name="minus" value="-" class="minus_button">
+                            <input type="submit" name="minus" value="Odvzemi" class="minus_button">
                         </div>
                     </form>
                 </div>
@@ -168,10 +96,10 @@
                             Vrednost v €: <input type="text" name="vrednost" placeholder="Vnesite vrednost..."> <br>
                         </div>
                         <div class="col-4">
-                            Privarčeval bom do: <input type="text" name="datum" placeholder="DD.MM.LLLL"> <br>
+                            Privarčeval bom do: <input type="date" name="datum"> <br>
                         </div>
                         <div class="col-2">
-                            <input type="submit" value="+">
+                            <input type="submit" value="Dodaj">
                         </div>
                     </form>
                 </div>
@@ -196,7 +124,7 @@
                             </select>
                         </div>
                         <div class="col-2">
-                            <input type="submit" value="+">
+                            <input type="submit" value="Dodaj">
                         </div>
                     </form>
                 </div>

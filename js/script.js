@@ -1,5 +1,9 @@
 document.addEventListener("DOMContentLoaded", main);
 
+
+var submit;
+
+
 function main() {
     
 }
@@ -9,8 +13,56 @@ function main() {
 
 
 
+
+
+
 function registration() {
-    // check if already registered
+    var inputs = document.getElementById("registration_form");
+    
+    var username = inputs[0];
+    var password = inputs[1];
+    var password_2 = inputs[2];
+    
+    var checkbox = document.getElementById("registration_form").elements["captcha"].checked;
+    if (!checkbox) {
+        alert ("Označite, da niste robot.");
+    }
+    
+    if (submit.value == "Vpis") {
+        if (username.value.length == 0) {
+            alert("Vnesite uporabniško ime.");
+            return;
+        }
+        if (username.value.length < 6) {
+            alert("Uporabniško ime mora biti dolgo vsaj 6 znakov.");
+            return;
+        }
+        
+        // TODO
+        // preveri, če je pravo uporabniško ime in pravilno geslo na vsaj enem od polj
+    }
+    else if (submit.value == "Registracija") {
+        if (username.value.length == 0 || password.value.length == 0 || password_2.value.length == 0) {
+            alert("Izpolnite vsa polja.");
+            return;
+        }
+        
+        if (username.value.length < 6) {
+            alert("Uporabniško ime mora biti dolgo vsaj 6 znakov.");
+            return;
+        }
+        if (password.value != password_2.value) {
+            alert("Gesli se ne ujemata.");
+            return;
+        }
+        
+        // TODO
+        // preveri če tako up. ime še ne obstaja
+        
+        // TODO
+        // registriraj novo osebo, dodaj v seznam uporabnikov
+    }
+    
     
     return false;
 }
@@ -70,7 +122,7 @@ function showGoal(elem){
     else {
         document.getElementsByClassName("add_data")[0].style.display = "block";
         document.getElementsByClassName("new_goals")[0].style.display = "none";
-        
+        document.getElementsByClassName("add_to_goal")[0].style.display = "none";
     }
 }
 
@@ -87,3 +139,9 @@ function showGoal_2(elem){
         document.getElementsByClassName("goal_results")[0].style.display = "none";
     }
 }
+
+
+function Clicked (button) {
+    submit = button ;
+}
+
