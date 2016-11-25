@@ -108,7 +108,7 @@ input[type="submit"] {
     background: #80ff80;
 }
 
-.register input[type="submit"] {
+.register input[type="submit"], #snap {
     border: 1px solid black;
     color: black;
     font-size: 20px;
@@ -240,5 +240,31 @@ input[type='checkbox']:checked {
 }
 
 #registration_form {
+    text-align: center;
+}
+
+#snap {
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+#video {
+    border: 3px solid black;
+    border-radius: 5px;
+    height: 250px;
+}
+
+#canvas_camera {
+    display: none;
+    margin-top: 20px;
+    margin: 0 auto;
+    border-radius: 5px;
+    width: 133px;
+    height: 100px;
+}
+
+#profile_picture {
     text-align: center;
 }

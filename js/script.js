@@ -1,10 +1,24 @@
 document.addEventListener("DOMContentLoaded", main);
 
 
+
 var submit;
 
 
 function main() {
+    // window.addEventListener("beforeunload", onCheckLeave);
+    /*
+    var logo_picture = document.getElementsByClassName("logo")[0];
+    if (profile_picture != null) {
+        logo_picture.src = profile_picture.src;    
+    }
+    */
+    
+    
+    
+    
+    
+    
     
 }
 
@@ -108,6 +122,11 @@ function add_to_goal() {
 }
 
 
+
+
+
+
+
 function showGoal(elem){
     if(elem.value == "new_goal") { 
         document.getElementsByClassName("new_goals")[0].style.display = "block";
@@ -145,3 +164,24 @@ function Clicked (button) {
     submit = button ;
 }
 
+
+
+
+
+
+
+
+
+
+/*
+function onCheckLeave (ev) {
+    var inputs = document.querySelectorAll("input[type='text'], input[type='password']");
+    
+    for (var i=0; i<inputs.length; i++) {
+        if (inputs[i].value != "") {
+            ev.returnValue = "pozor";
+            return "pozor";
+        }
+    }
+}
+*/
