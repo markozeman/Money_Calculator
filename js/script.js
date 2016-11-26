@@ -81,6 +81,83 @@ class Uporabnik {
             }
         }
     }
+    
+    findAll (denarnica_banka_skupaj, izdatek_prejemek, casovno_obdobje, kategorija) {
+        var izdatki = [];
+        var prejemki = [];
+        if (denarnica_banka_skupaj == "denarnica") {
+            if (izdatek_prejemek == "izdatek") {
+                for (var i=0; i<this.denarnica_stanje.izdatki.length; i++) {
+                    var trenutni_izdatek = this.denarnica_stanje.izdatki[i];
+                    if (Cilj.vZadnjemCasu(new Date(), trenutni_izdatek.datum, casovno_obdobje) && (trenutni_izdatek.kategorija == kategorija || kategorija == "vse")) {
+                        izdatki.push(trenutni_izdatek);
+                    }
+                }
+                return izdatki;
+            }
+            else if (izdatek_prejemek == "prejemek") {
+                for (var i=0; i<this.denarnica_stanje.prejemki.length; i++) {
+                    var trenutni_prejemek = this.denarnica_stanje.prejemki[i];
+                    if (Cilj.vZadnjemCasu(new Date(), trenutni_prejemek.datum, casovno_obdobje) && (trenutni_prejemek.kategorija == kategorija || kategorija == "vse")) {
+                        prejemki.push(trenutni_prejemek);
+                    }
+                }
+                return prejemki;
+            }
+        }
+        else if (denarnica_banka_skupaj == "banka") {
+            if (izdatek_prejemek == "izdatek") {
+                for (var i=0; i<this.bancno_stanje.izdatki.length; i++) {
+                    var trenutni_izdatek = this.bancno_stanje.izdatki[i];
+                    if (Cilj.vZadnjemCasu(new Date(), trenutni_izdatek.datum, casovno_obdobje) && (trenutni_izdatek.kategorija == kategorija || kategorija == "vse")) {
+                        izdatki.push(trenutni_izdatek);
+                    }
+                }
+                return izdatki;
+            }
+            else if (izdatek_prejemek == "prejemek") {
+                for (var i=0; i<this.bancno_stanje.prejemki.length; i++) {
+                    var trenutni_prejemek = this.bancno_stanje.prejemki[i];
+                    if (Cilj.vZadnjemCasu(new Date(), trenutni_prejemek.datum, casovno_obdobje) && (trenutni_prejemek.kategorija == kategorija || kategorija == "vse")) {
+                        prejemki.push(trenutni_prejemek);
+                    }
+                }
+                return prejemki;
+            }
+        }
+        else if (denarnica_banka_skupaj == "skupaj") {
+            if (izdatek_prejemek == "izdatek") {
+                for (var i=0; i<this.denarnica_stanje.izdatki.length; i++) {
+                    var trenutni_izdatek = this.denarnica_stanje.izdatki[i];
+                    if (Cilj.vZadnjemCasu(new Date(), trenutni_izdatek.datum, casovno_obdobje) && (trenutni_izdatek.kategorija == kategorija || kategorija == "vse")) {
+                        izdatki.push(trenutni_izdatek);
+                    }
+                }
+                for (var i=0; i<this.bancno_stanje.izdatki.length; i++) {
+                    var trenutni_izdatek = this.bancno_stanje.izdatki[i];
+                    if (Cilj.vZadnjemCasu(new Date(), trenutni_izdatek.datum, casovno_obdobje) && (trenutni_izdatek.kategorija == kategorija || kategorija == "vse")) {
+                        izdatki.push(trenutni_izdatek);
+                    }
+                }
+                return izdatki;
+            }
+            else if (izdatek_prejemek == "prejemek") {
+                for (var i=0; i<this.denarnica_stanje.prejemki.length; i++) {
+                    var trenutni_prejemek = this.denarnica_stanje.prejemki[i];
+                    if (Cilj.vZadnjemCasu(new Date(), trenutni_prejemek.datum, casovno_obdobje) && (trenutni_prejemek.kategorija == kategorija || kategorija == "vse")) {
+                        prejemki.push(trenutni_prejemek);
+                    }
+                }
+                for (var i=0; i<this.bancno_stanje.prejemki.length; i++) {
+                    var trenutni_prejemek = this.bancno_stanje.prejemki[i];
+                    if (Cilj.vZadnjemCasu(new Date(), trenutni_prejemek.datum, casovno_obdobje) && (trenutni_prejemek.kategorija == kategorija || kategorija == "vse")) {
+                        prejemki.push(trenutni_prejemek);
+                    }
+                }
+                return prejemki;
+            }
+        }
+    }
 }
 
 
@@ -136,6 +213,19 @@ class Cilj {
         var do_danes = this.steviloDniMedDatumoma(danes, this.do_datuma);
         return (do_danes / skupno);
     }
+    
+    vZadnjemCasu (danes, datum, casovno_obdobje) {
+        if (casovno_obdobje == "teden" && this.steviloDniMedDatumoma(danes, datum) <= 7) {
+            return true;
+        }
+        if (casovno_obdobje == "mesec" && this.steviloDniMedDatumoma(danes, datum) <= 31) {
+            return true;
+        }
+        if (casovno_obdobje == "leto" && this.steviloDniMedDatumoma(danes, datum) <= 365) {
+            return true;
+        }
+        return false;
+    }
 }
 
 
@@ -145,6 +235,7 @@ class IzdatekPrejemek {
         this.opis = opis;
         this.znesek = znesek;
         this.kategorija = kategorija;
+        this.datum = new Date();
         this.banka_denarnica = banka_denarnica;
     }
 }
@@ -159,30 +250,11 @@ class Transakcija {
 }
 
 
-/*
-var up_1 = new Uporabnik("marko", "geslo123");
-up_1.bancno_stanje.setZacetnoStanje(1500);
-up_1.bancno_stanje.addIzdatek(100);
-console.log(up_1.bancno_stanje);
-*/
-
-
 
 
 function main() {
-    // window.addEventListener("beforeunload", onCheckLeave);
-    /*
-    var logo_picture = document.getElementsByClassName("logo")[0];
-    if (profile_picture != null) {
-        logo_picture.src = profile_picture.src;    
-    }
-    */
     
-    
-    
-    
-    
-    
+
     
 }
 
@@ -271,18 +343,151 @@ function registration() {
 
 
 function get_visual_minus() {
+    // preveri kateri dropdown je izbran
+    var dropdown = document.getElementById("select_vizualizacija");
+    var dropdown_string = dropdown.options[dropdown.selectedIndex].value;
+    
+    var inputs = document.getElementById("get_visual_minus");
+    var kategorija = inputs[0].value;
+    var casovno_obdobje = inputs[1].value;
+    /*
+    console.log(dropdown_string);
+    console.log(kategorija);
+    console.log(casovno_obdobje);
+    */
+    
+    var result;
+    if (dropdown_string == "wallet") {
+        result = trenutni_uporabnik.findAll("denarnica", "izdatek", casovno_obdobje, kategorija);
+    }
+    else if (dropdown_string == "bank") {
+        result = trenutni_uporabnik.findAll("banka", "izdatek", casovno_obdobje, kategorija);
+    }
+    else if (dropdown_string == "wallet_and_bank") {
+        result = trenutni_uporabnik.findAll("skupaj", "izdatek", casovno_obdobje, kategorija);
+    }
+    
+    // TODO
+    // prikaži result
+    
+    // opis; znesek; kategorija; datum;
+    
+    var izdatek = new IzdatekPrejemek("izdatek", "čokolada", 3, "hrana", "denarnica");
+    var izdatek_1 = new IzdatekPrejemek("izdatek", "bonboni", 2, "hrana", "denarnica");
+    var izdatek_2 = new IzdatekPrejemek("izdatek", "coca-cola", 1, "hrana", "denarnica");
+    var izdatek_3 = new IzdatekPrejemek("izdatek", "pizza", 6, "hrana", "denarnica");
+    
+    var max_vrednost = 6;
+    var max_width = 150;
+    var y = 30;
+    
+    var c = document.getElementById("izdatki_canvas");
+    var ctx = c.getContext("2d");
+    ctx.font = "20px Helvetica";
+    
+    ctx.fillText(izdatek.opis, 10, y, 100);
+    ctx.fillText(izdatek_1.opis, 10, y*2, 100);
+    ctx.fillText(izdatek_2.opis, 10, y*3, 100);
+    ctx.fillText(izdatek_3.opis, 10, y*4, 100);
+    
+    ctx.fillStyle="#80ff80";
+    ctx.fillRect(120, y-17, (izdatek.znesek / max_vrednost) * max_width, 20);
+    ctx.fillRect(120, y*2-17, (izdatek_1.znesek / max_vrednost) * max_width, 20);
+    ctx.fillRect(120, y*3-17, (izdatek_2.znesek / max_vrednost) * max_width, 20);
+    ctx.fillRect(120, y*4-17, (izdatek_3.znesek / max_vrednost) * max_width, 20);
+    
     
     return false;
 }
 
 
 function get_visual_plus() {
+    // preveri kateri dropdown je izbran
+    var dropdown = document.getElementById("select_vizualizacija");
+    var dropdown_string = dropdown.options[dropdown.selectedIndex].value;
+    
+    var inputs = document.getElementById("get_visual_plus");
+    var kategorija = inputs[0].value;
+    var casovno_obdobje = inputs[1].value;
+    /*
+    console.log(dropdown_string);
+    console.log(kategorija);
+    console.log(casovno_obdobje);
+    */
+    
+    var result;
+    if (dropdown_string == "wallet") {
+        result = trenutni_uporabnik.findAll("denarnica", "prejemek", casovno_obdobje, kategorija);
+    }
+    else if (dropdown_string == "bank") {
+        result = trenutni_uporabnik.findAll("banka", "prejemek", casovno_obdobje, kategorija);
+    }
+    else if (dropdown_string == "wallet_and_bank") {
+        result = trenutni_uporabnik.findAll("skupaj", "prejemek", casovno_obdobje, kategorija);
+    }
+    
+    // TODO
+    // prikaži result
+    
+    // opis; znesek; kategorija; datum;
+    
+    var prejemek = new IzdatekPrejemek("prejemek", "Plača_9_2016", 1000, "plača", "banka");
+    var prejemek_1 = new IzdatekPrejemek("prejemek", "Plača_10_2016", 1111, "plača", "banka");
+    var prejemek_2 = new IzdatekPrejemek("prejemek", "Plača_11_2016", 1300, "plača", "banka");
+    
+    var max_vrednost = 1300;
+    var max_width = 150;
+    var y = 30;
+    
+    var c = document.getElementById("prejemki_canvas");
+    var ctx = c.getContext("2d");
+    ctx.font = "20px Helvetica";
+    
+    ctx.fillText(prejemek.opis, 10, y, 100);
+    ctx.fillText(prejemek_1.opis, 10, y*2, 100);
+    ctx.fillText(prejemek_2.opis, 10, y*3, 100);
+    
+    ctx.fillStyle="#80ff80";
+    ctx.fillRect(120, y-17, (prejemek.znesek / max_vrednost) * max_width, 20);
+    ctx.fillRect(120, y*2-17, (prejemek_1.znesek / max_vrednost) * max_width, 20);
+    ctx.fillRect(120, y*3-17, (prejemek_2.znesek / max_vrednost) * max_width, 20);
+    
     
     return false;
 }
 
 
 function get_data() {
+    // preveri kateri dropdown je izbran
+    var dropdown = document.getElementById("pregled_select");
+    var dropdown_string = dropdown.options[dropdown.selectedIndex].value;
+    
+    if (dropdown_string == "goals") {
+        // prikaži cilje
+    }
+    else {
+        // podatki iz forme
+        var inputs = document.getElementById("pregled_form");
+        var kategorija = inputs[0].value;
+        var casovno_obdobje = inputs[1].value;
+        
+        console.log(dropdown_string);
+        console.log(kategorija);
+        console.log(casovno_obdobje);
+        
+        // TODO
+        // izpiši glede na kategorijo in casovno_obdobje
+        
+        if (dropdown_string == "wallet") {
+            
+        }
+        else if (dropdown_string == "bank") {
+            
+        }
+    }
+    
+
+
 
     
     return false;
@@ -298,11 +503,11 @@ function add_or_take_money() {
     var opis = inputs[0].value;
     var znesek = inputs[1].value;
     var kategorija = inputs[2].value;
-    
+    /*
     console.log(opis);
     console.log(znesek);
     console.log(kategorija);
-
+    */
     if (kategorija == "dvig" || kategorija == "polog") {
         var transakcija = new Transakcija(opis, znesek, kategorija);
         trenutni_uporabnik.addTranskacija(transakcija);
@@ -347,14 +552,20 @@ function add_goal() {
     var opis = inputs[0].value;
     var vrednost = parseInt(inputs[1].value);
     var do_datum = inputs[2].valueAsDate;
-    
+    /*
     console.log(opis);
     console.log(vrednost);
     console.log(do_datum);
-    
-    
+    */
     var cilj = new Cilj(opis, vrednost, do_datum);
     trenutni_uporabnik.addCilj(cilj);
+    
+    // dodaj cilj v dropdown
+    var goals_dropdown = document.getElementById("goals");
+    var option = document.createElement("option");
+    option.text = opis;
+    option.value = opis;
+    goals_dropdown.add(option);
     
     console.log(trenutni_uporabnik);
     
@@ -373,35 +584,33 @@ function add_to_goal() {
         alert("Vnesite vrednost");
         return;
     }
-    
+    /*
     console.log(vrednost);
     console.log(wallet_bank);
     console.log(goal);
+    */
     
-    
-    // TODO
     // dodaj k izbranemu cilju
     var cilj = trenutni_uporabnik.findCilj(goal);
     cilj.povecajTrenutnoPrivarcevano(vrednost);
-    // ali se poveča tudi pri uporabnikovih ciljih ???
     
-    
-    // TODO
     // odvzemi denar iz denarnice ali banke
-    var transakcija = new Transakcija("Dodajanje denarja cilju" + goal, vrednost, "polog");
-    trenutni_uporabnik.addTranskacija(transakcija);
-    trenutni_uporabnik.executeTransakcija(transakcija);
-    
-    
+    var izdatek_prejemek;
+    if (wallet_bank == "wallet") {
+        izdatek_prejemek = new IzdatekPrejemek("izdatek", "Dodajanje denarja cilju: " + goal, vrednost, "dodajanje cilju", "denarnica");
+        trenutni_uporabnik.denarnica_stanje.addIzdatekPrejemek(izdatek_prejemek);
+    }
+    else if (wallet_bank == "bank") {
+        izdatek_prejemek = new IzdatekPrejemek("izdatek", "Dodajanje denarja cilju: " + goal, vrednost, "dodajanje cilju", "banka");
+        trenutni_uporabnik.bancno_stanje.addIzdatekPrejemek(izdatek_prejemek);
+    }
+    trenutni_uporabnik.executeIzdatekPrejemek(izdatek_prejemek);
+        
     console.log(trenutni_uporabnik);
     
     
     return false;
 }
-
-
-
-
 
 
 
@@ -453,19 +662,12 @@ function find_user_by_username (username) {
 }
 
 
-function index_of_current_user () {
-    for (var i=0; i<uporabniki.length; i++) {
-        if (uporabniki[i] == trenutni_uporabnik) {
-            return i;
-        }
-    }
-}
-
-
 
 
 
 /*
+window.addEventListener("beforeunload", onCheckLeave);
+
 function onCheckLeave (ev) {
     var inputs = document.querySelectorAll("input[type='text'], input[type='password']");
     

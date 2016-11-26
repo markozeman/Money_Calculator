@@ -40,7 +40,7 @@
 
         <section class="main col-12">
             <div class="dropdown">
-                <select onchange="showGoal_2(this)">
+                <select onchange="showGoal_2(this)" id="pregled_select">
                     <option value="wallet"> Denarnica </option>
                     <option value="bank"> Banka </option>
                     <option value="goals"> Cilji </option>
@@ -48,9 +48,12 @@
             </div>
             
             <div class="not_goal_results col-12">
-                <form method="get" onsubmit="return get_data()">
+                <form method="get" onsubmit="return get_data()" id="pregled_form">
                     <div class="choose_option col-3">
                         <select>
+                            <option value="vsi_izdatki"> Vsi izdatki </option>
+                            <option value="vsi_izdatki"> Vsi prejemki </option>
+                            <option value="vse_transakcije"> Vse transakcije </option>
                             <option value="hrana"> Hrana </option>
                             <option value="oblacila"> Oblačila, obutev </option>
                             <option value="tehnika"> Tehnika </option>
