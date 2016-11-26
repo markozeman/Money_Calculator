@@ -50,7 +50,7 @@
             
             <div class="add_data">
                 <div class="input col-12">
-                    <form method="post" onsubmit="return add_or_take_money()">
+                    <form method="post" onsubmit="return add_or_take_money()" id="add_data">
                         <div class="col-3">
                             Opis: <input type="text" name="opis" placeholder="Vnesite opis...">
                         </div>
@@ -58,7 +58,7 @@
                             Znesek v €: <input type="text" name="znesek" placeholder="Vnesite znesek...">
                         </div>
                         <div class="col-3">
-                            <select>
+                            <select id="select_category">
                                 <option value="hrana"> Hrana </option>
                                 <option value="oblacila"> Oblačila, obutev </option>
                                 <option value="tehnika"> Tehnika </option>
@@ -77,10 +77,10 @@
                             </select>
                         </div>
                         <div class="col-1">
-                            <input type="submit" name="plus" value="Dodaj">
+                            <input type="submit" name="plus" value="Dodaj" onclick="Clicked(this);">
                         </div>    
                         <div class="col-1">
-                            <input type="submit" name="minus" value="Odvzemi" class="minus_button">
+                            <input type="submit" name="minus" value="Odvzemi" class="minus_button" onclick="Clicked(this);">
                         </div>
                     </form>
                 </div>
@@ -88,12 +88,12 @@
             
             <div class="new_goals" style="display: none;">
                 <div class="col-12">
-                    <form method="post" onsubmit="return add_goal()">
+                    <form method="post" onsubmit="return add_goal()" id="add_goal">
                         <div class="col-3">
-                            Varčujem za: <input type="text" name="opis_privarcevanja" placeholder="Vnesite cilj varčevanja..."><br>
+                            Varčujem za: <input type="text" name="opis_privarcevanja" placeholder="Vnesite cilj varčevanja...">
                         </div>
                         <div class="col-3">
-                            Vrednost v €: <input type="text" name="vrednost" placeholder="Vnesite vrednost..."> <br>
+                            Vrednost v €: <input type="text" name="vrednost" placeholder="Vnesite vrednost...">
                         </div>
                         <div class="col-4">
                             Privarčeval bom do: <input type="date" name="datum"> <br>
@@ -107,9 +107,9 @@
             
             <div class="add_to_goal" style="display: none;">
                 <div class="col-12">
-                    <form method="post" onsubmit="return add_to_goal()">
+                    <form method="post" onsubmit="return add_to_goal()" id="add_to_goal">
                         <div class="col-4">
-                            Vrednost v €: <input type="text" name="vrednost" placeholder="Vnesite vrednost..."> <br>
+                            Vrednost v €: <input type="text" name="vrednost" placeholder="Vnesite vrednost..."> 
                         </div>
                         <div class="col-3">
                             <select>
